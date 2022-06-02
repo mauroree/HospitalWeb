@@ -14,9 +14,9 @@ import javax.ejb.Stateful;
  * @author Mauro
  */
 @Stateful
-public class EspecialidadeDAO<TIPO> extends DAOGenerico<Especialidade> implements Serializable{
-    
-    public EspecialidadeDAO(){
+public class EspecialidadeDAO<TIPO> extends DAOGenerico<Especialidade> implements Serializable {
+
+    public EspecialidadeDAO() {
         super();
         classePersistente = Especialidade.class;
         //Definir as ordens possiveis

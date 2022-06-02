@@ -14,9 +14,10 @@ import javax.ejb.Stateful;
 /**
  *
  * @author Mauro
+ * 
  */
 @Stateful
-public class ConsultaDAO<TIPO> extends DAOGenerico<Consulta> implements Serializable  {
+public class ConsultaDAO <TIPO> extends DAOGenerico<Consulta> implements Serializable  {
     
     public ConsultaDAO(){
         super();
