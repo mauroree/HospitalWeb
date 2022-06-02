@@ -20,52 +20,50 @@ import javax.servlet.http.HttpServletRequest;
  */
 @Named(value = "controleLogin")
 @SessionScoped
-public class ControleLogin implements Serializable{
-    
+public class ControleLogin implements Serializable {
+
     private Usuario usuarioAutenticado;
     @EJB
     private UsuarioDAO<Usuario> dao;
     private String usuario;
     private String senha;
-    
-    public ControleLogin(){
-        
+
+    public ControleLogin() {
+
     }
-    
-    public String irPaginaLogin(){
+
+    public String irPaginaLogin() {
         return "/login?faces-redirect=true";
     }
-    
-    public String efetuarLogin(){
+
+    public String efetuarLogin() {
         try {
-            HttpServletRequest request = (HttpServletRequest)
-                    FacesContext.getCurrentInstance().getExternalContext().getRequest();
+            HttpServletRequest request = (HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext().getRequest();
             request.login(this.usuario, this.senha);
-            if (request.getUserPrincipal() != null){
-                usuarioAutenticado = 
-                        dao.getObjectByID(request.getUserPrincipal().getName());
-                Util.mensagemInformacao("Login realizado com sucesso!");               
+            if (request.getUserPrincipal() != null) {
+                usuarioAutenticado
+                        = dao.getObjectByID(request.getUserPrincipal().getName());
+                Util.mensagemInformacao("Login realizado com sucesso!");
                 usuario = "";
-                senha = "";                        
-            }            
+                senha = "";
+            }
             return "/index?faces-redirect=true";
-        } catch (Exception e){
+        } catch (Exception e) {
             Util.mensagemErro("Usuario ou senha inválidos! " + Util.getMensagemErro(e));
             return "/login";
-        }            
+        }
     }
-    
-    public String logout(){
+
+    public String logout() {
         try {
             usuarioAutenticado = null;
-            HttpServletRequest request = (HttpServletRequest)
-                    FacesContext.getCurrentInstance().getExternalContext().getRequest();
-            request.logout();          
+            HttpServletRequest request = (HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext().getRequest();
+            request.logout();
             return "/index?faces-redirect=true";
-        } catch (Exception e){
+        } catch (Exception e) {
             Util.mensagemErro("Erro ao fazer logout! " + Util.getMensagemErro(e));
             return "/index?faces-redirect=true";
-        }          
+        }
     }
 
     public Usuario getUsuarioAutenticado() {
