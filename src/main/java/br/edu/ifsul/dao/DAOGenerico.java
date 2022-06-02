@@ -22,7 +22,7 @@ public class DAOGenerico<TIPO> implements Serializable {
     
     private List<TIPO> listaObjetos;
     private List<TIPO> listaTodos;
-    @PersistenceContext(unitName = "HospitalWebPU")
+    @PersistenceContext(unitName = "HospitalWeb_PU")
     protected EntityManager em;
     protected Class classePersistente;
     protected String filtro = "";

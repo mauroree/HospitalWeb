@@ -18,7 +18,7 @@ import javax.persistence.PersistenceContext;
 @RequestScoped
 public class ConverterPaciente implements Serializable, Converter {
 
-    @PersistenceContext(unitName = "HospitalWebPU")
+    @PersistenceContext(unitName = "HospitalWeb_PU")
     protected EntityManager em;    
     
     @Override

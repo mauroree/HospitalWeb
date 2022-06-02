@@ -21,7 +21,7 @@ import javax.persistence.PersistenceContext;
 @Named(value = "converterUsuario")
 @RequestScoped
 public class ConverterUsuario implements Serializable, Converter {
-    @PersistenceContext(unitName = "HospitalWebPU")
+    @PersistenceContext(unitName = "HospitalWeb_PU")
     protected EntityManager em;    
     
     // converte da tela para o objeto

@@ -18,12 +18,12 @@ import javax.persistence.PersistenceContext;
 @RequestScoped
 public class ConverterMedico implements Serializable, Converter {
 
-    @PersistenceContext(unitName = "HospitalWebPU")
-    protected EntityManager em;    
-    
+    @PersistenceContext(unitName = "HospitalWeb_PU")
+    protected EntityManager em;
+
     @Override
     public Object getAsObject(FacesContext fc, UIComponent uic, String string) {
-        if (string == null || string.equals("Selecione um registro")){
+        if (string == null || string.equals("Selecione um registro")) {
             return null;
         }
         return em.find(Medico.class, Integer.parseInt(string));
@@ -31,7 +31,7 @@ public class ConverterMedico implements Serializable, Converter {
 
     @Override
     public String getAsString(FacesContext fc, UIComponent uic, Object t) {
-        if (t == null){
+        if (t == null) {
             return null;
         }
         Medico obj = (Medico) t;

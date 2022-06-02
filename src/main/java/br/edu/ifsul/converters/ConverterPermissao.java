@@ -22,7 +22,7 @@ import javax.persistence.PersistenceContext;
 @RequestScoped
 public class ConverterPermissao implements Serializable, Converter  {
     
-    @PersistenceContext(unitName = "HospitalWebPU")
+    @PersistenceContext(unitName = "HospitalWeb_PU")
     protected EntityManager em;    
     
     // converte da tela para o objeto
