@@ -31,7 +31,7 @@ public class ReceituarioDAO<TIPO> extends DAOGenerico<Receituario> implements Se
     
     public Receituario getObjectByID(Object id) throws Exception {
         Receituario obj = em.find(Receituario.class, id);
-        //Uso para evitar lazyinitializationexception
+        //Usado para evitar: lazyinitializationexception
         obj.getMedicamentos().size();
         return obj;
     }

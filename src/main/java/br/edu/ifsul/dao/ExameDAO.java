@@ -28,5 +28,7 @@ public class ExameDAO<TIPO> extends DAOGenerico<Exame> implements Serializable  
         //Inicializar o conversor das ordens
         converterOrdem = new ConverterOrdem();
         converterOrdem.setListaOrdem(listaOrdem);
+    
     }
+
 }
