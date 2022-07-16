@@ -47,7 +47,7 @@ public class ControleConsulta implements Serializable {
 
     public void imprimeConsultas() {
         HashMap parametros = new HashMap();
-        UtilRelatorios.imprimeRelatorio("relatoriosConsultas", parametros, dao.getListaObjetos());
+        UtilRelatorios.imprimeRelatorio("relatoriosConsultas", parametros, dao.getListaTodos());
     }
 
     public void imprimeConsulta(Object id) {

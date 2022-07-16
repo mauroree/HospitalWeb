@@ -53,7 +53,7 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="consolas&#xD;&#xA;" size="26"/>
+					<font fontName="SansSerif" size="26"/>
 				</textElement>
 				<text><![CDATA[RELATÓRIO DE CONSULTAS]]></text>
 			</staticText>
